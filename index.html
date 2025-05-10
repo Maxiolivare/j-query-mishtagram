@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaicon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="linea">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 d-flex alen">
+                    <img src="assets/img/instagram.png" class="logo" alt="">
+                    <h4 class="mish">Mishtagram</h4>
+                </div>
+                <div class="col-6 d-flex alen ">
+                    <!-- Button trigger modal -->
+                    <a class="boton ms-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Iniciar Sesion
+                    </a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h2 class="modal-title fs-5" id="exampleModalLabel">Iniciar Sesión</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form >
+                                        <div class="form-group">
+                                        <label>Nombre de Usuario</label>
+                                        <input type="text" class="form-control" id="nombre-usuario">
+                                        </div>
+                                        <br>
+                                        <button type="button" onclick="nombre()" id="nombre-de-usuario" class="boton">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br>
+    <main class="container">
+        <section class="cho">
+            <article>
+                <div class="mx-auto contenedor-publicacion">
+                    <div class="d-flex alen">
+                        <img src="assets/img/perfil.png" class="perfil" alt="">
+                        <p id="usado"><strong>memes_mish</strong></p>
+                    </div>
+                    <img src="assets/img/publi.jpeg" class="publicacion" alt="">
+                    <div class="d-flex mt-2">
+                        <img src="assets/img/me-gusta.png" class="icono me-3 like" alt="">
+                        <img  onclick="mostrarComentarios()" src="assets/img/globos-de-texto.png" class="icono" id="globos" alt="">
+                    </div>
+                    <p><strong>1.000.000 Me gusta</strong></p>
+                    <div id="seccionComentarios" class="mt-3 comentarioss">
+                        <div id="comentariosLista" class="margen">
+                            <p id="usado"><strong>Mishell Obama </strong>Borra la cuenta</p>
+                            <p id="usado"><strong>Mishael Jackson </strong>Que gracioso, me suscribo</p>  
+                        </div>
+                        <form id="comentarioForm" class="mt-2 d-flex">
+                            <input type="text" id="comentarioInput" class="form-control me-2" placeholder="Escribe un comentario...">
+                            <button type="button" id="boton-publi" class="boton">Publicar</button>
+                        </form>
+                    </div>
+                </div>
+            </article> 
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script>
+        //jquery
+        $(document).ready(function() {
+            $('#globos').click(function() {
+                $('#seccionComentarios').toggleClass('yelnone');
+            });
+
+            $('#nombre-de-usuario').click(function() {
+                let usuario = $('#nombre-usuario').val();
+                let nombresUsados = ["Mishael Jackson", "Mishael Jordan", "memes_mish", "Mishell Obama"];
+
+                if(usuario == "") {
+                    alert("Ponte algo por favor");
+                } else if(nombresUsados.includes(usuario)) {
+                    alert('Ese usuario ya existe, usa otro');
+                } else {
+                    alert('Usuario ingresado, ya puedes cerrar el modal');
+                }
+            });
+
+            $('#boton-publi').click(function() {
+                let usuario = $('#nombre-usuario').val();
+                let comentario = $('#comentarioInput').val();
+
+                if(usuario == "") {
+                    alert('Debes iniciar sesión antes de comentar');
+                } else {
+                    $('#comentariosLista').append('<p><strong>' + usuario + '</strong> ' + comentario + '</p>');
+
+                    $('#comentarioInput').val('');
+                }
+            });
+        });
+                
+    </script>
+</body>
+</html>

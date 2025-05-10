@@ -1,0 +1,80 @@
+.logo{
+    width: 70px;
+    height: 70px;
+}
+header{
+    padding: 10px;
+    background-color: #F5F5F5;
+    
+    
+}
+.alen{
+    align-items: center;
+}
+.perfil{
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    
+}
+.icono{
+    width: 30px;
+    height: 30px;
+    margin-right: 7px;
+}
+.linea{
+    border-bottom: 1px solid black;
+}
+
+.mish{
+    margin-left: 10px;
+}
+.cho{
+    width: 80%;
+    margin: 0 auto;
+}
+.contenedor-publicacion{
+    width: 80%;
+    background-color: #F5F5F5;
+    padding: 10px;
+}
+.publicacion{
+    width: 90%;
+    height: 520px;
+    margin-top: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.comentarioss{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+.yelnone{
+    display: block;
+}
+.margen{
+    margin-top: 5px;
+}
+.boton{
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: #0d6efd;
+    cursor: pointer;
+    border: 1px solid #0d6efd;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    
+}
+.boton:hover{
+    background-color: white;
+    border: 1px solid #0d6efd;;
+    color:#0d6efd;
+}
+.modal-footer{
+    justify-content: center !important;
+}
